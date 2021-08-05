@@ -1,5 +1,7 @@
 package practice07;
 
+import java.util.Objects;
+
 public class Person {
 
     private int id;
@@ -11,6 +13,19 @@ public class Person {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return id == person.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     public String introduce(){
