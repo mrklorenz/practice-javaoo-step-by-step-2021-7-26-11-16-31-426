@@ -2,7 +2,7 @@ package practice08;
 
 public class Klass {
 
-    private int number;
+    private final int number;
     private Student leader;
 
     public Klass(int number) {
@@ -22,8 +22,8 @@ public class Klass {
         return this.leader;
     }
 
-    public Student appendMember(Student student){
-        return this.leader = student.getKlass().getLeader();
+    public void appendMember(Student student){
+        this.leader = student;
     }
 
     public int getNumber() {
